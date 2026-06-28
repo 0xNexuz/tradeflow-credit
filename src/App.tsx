@@ -35,10 +35,25 @@ const CONTRACT_ADDRESS = import.meta.env.VITE_TRADEFLOW_CONTRACT_ADDRESS as
   | undefined
 
 const marketStats = [
-  ['USD 2T', 'global SME trade finance gap'],
-  ['40%', 'SME applications rejected'],
-  ['7-10d', 'manual letter of credit processing'],
-  ['15M+', 'Jebel Ali annual TEUs'],
+  ['USD 2.5T', 'global trade finance gap, ADB 2025'],
+  ['41%', 'SME trade finance applications rejected'],
+  ['USD 3.3B', 'estimated UAE unmet demand'],
+  ['15.5M', 'Jebel Ali annual TEUs handled'],
+]
+
+const sources = [
+  {
+    label: 'ADB Global Trade Finance Gap Survey 2025',
+    href: 'https://www.tralac.org/documents/news/7229-adb-global-trade-finance-gap-survey-december-2025.html',
+  },
+  {
+    label: 'GTR report on ADB 2025 SME rejection rate',
+    href: 'https://www.gtreview.com/news/global/trade-finance-gap-stabilises-at-us2-5tn/',
+  },
+  {
+    label: 'DP World 2024 Jebel Ali cargo volumes',
+    href: 'https://www.dpworld.com/en/news/dp-world-records-highest-cargo-volumes-at-jebel-ali-port-since-2015',
+  },
 ]
 
 const features = [
@@ -392,6 +407,20 @@ function App() {
           <span><Blocks size={18} /> Polygon settlement records</span>
           <span><BanknoteArrowUp size={18} /> USDC funding path</span>
           <span><Sparkles size={18} /> Challenge-ready MVP scope</span>
+        </div>
+      </section>
+
+      <section className="section sourcesSection">
+        <div>
+          <p className="eyebrow">Fact base</p>
+          <h2>Numbers are sourced, not decoration.</h2>
+        </div>
+        <div className="sourceLinks">
+          {sources.map((source) => (
+            <a href={source.href} target="_blank" key={source.href}>
+              {source.label} <ArrowRight size={15} />
+            </a>
+          ))}
         </div>
       </section>
 

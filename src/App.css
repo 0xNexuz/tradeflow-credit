@@ -506,6 +506,41 @@ input:focus {
   min-height: 62px;
 }
 
+.sourcesSection {
+  align-items: start;
+  background:
+    linear-gradient(135deg, rgba(10, 6, 16, 1), rgba(5, 3, 8, 1)),
+    repeating-linear-gradient(90deg, transparent 0 110px, rgba(163, 106, 255, 0.08) 111px);
+  border-top: 1px solid rgba(198, 162, 255, 0.16);
+  display: grid;
+  gap: clamp(30px, 6vw, 84px);
+  grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
+}
+
+.sourceLinks {
+  display: grid;
+  gap: 12px;
+}
+
+.sourceLinks a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(198, 162, 255, 0.18);
+  color: #f4ecff;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  line-height: 1.4;
+  min-height: 64px;
+  padding: 18px 20px;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.sourceLinks a:hover {
+  border-color: rgba(198, 162, 255, 0.52);
+  transform: translateY(-1px);
+}
+
 .finalCta {
   align-items: center;
   background:
@@ -541,7 +576,8 @@ input:focus {
   .consoleSection,
   .rail,
   .useCases,
-  .security {
+  .security,
+  .sourcesSection {
     grid-template-columns: 1fr;
   }
 
