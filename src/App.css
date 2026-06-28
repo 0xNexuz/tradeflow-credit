@@ -139,6 +139,7 @@ button:not(:disabled):hover,
   right: clamp(20px, 7vw, 110px);
   top: 20vh;
   transform: rotate(-8deg);
+  z-index: 3;
 }
 
 .ledgerTile,
@@ -176,7 +177,7 @@ button:not(:disabled):hover,
 
 .heroCopy {
   min-width: 0;
-  max-width: 850px;
+  max-width: min(780px, 52vw);
   position: relative;
   z-index: 2;
 }
@@ -199,12 +200,12 @@ p {
 
 h1 {
   color: #fff;
-  font-size: clamp(54px, 8vw, 118px);
+  font-size: clamp(54px, 6.4vw, 96px);
   font-weight: 600;
   letter-spacing: 0;
   line-height: 0.92;
   margin-bottom: 28px;
-  max-width: 980px;
+  max-width: 780px;
 }
 
 h2 {
