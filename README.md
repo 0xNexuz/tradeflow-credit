@@ -43,6 +43,48 @@ deployment, set the deployed address in Vercel:
 VITE_TRADEFLOW_CONTRACT_ADDRESS=0x...
 ```
 
+### Option A: temporary deployer wallet
+
+Use this for the hackathon MVP when you want a quick testnet deployment.
+
+```bash
+npm run wallet:create
+```
+
+This creates `.env.deployer.local` and prints a public address to fund. Send
+Amoy POL to that address from a faucet, then deploy:
+
+```bash
+npm run contract:deploy:amoy
+```
+
+The deploy script prints the contract address and writes `.env.local` for local
+frontend testing.
+
+### Option B: your own wallet
+
+Use this when you want the deployer wallet to be fully yours.
+
+1. Create or choose a MetaMask wallet.
+2. Add Polygon Amoy.
+3. Fund it with Amoy POL from a faucet.
+4. Create `.env.deployer.local`:
+
+```bash
+DEPLOYER_ADDRESS=0xYourWalletAddress
+DEPLOYER_PRIVATE_KEY=0xYourPrivateKey
+AMOY_RPC_URL=https://rpc-amoy.polygon.technology/
+```
+
+5. Deploy:
+
+```bash
+npm run contract:deploy:amoy
+```
+
+6. Add the printed contract address to Vercel as
+   `VITE_TRADEFLOW_CONTRACT_ADDRESS`, then redeploy.
+
 ## Local development
 
 ```bash

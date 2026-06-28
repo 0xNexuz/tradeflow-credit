@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "wallet:create": "node scripts/generate-deployer.mjs",
+    "contract:deploy:amoy": "node scripts/deploy-amoy.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.22.0",
@@ -19,7 +21,10 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.17.0",
     "oxlint": "^1.69.0",
+    "solc": "^0.8.35",
     "typescript": "~6.0.2",
     "vite": "^8.1.0"
   }
