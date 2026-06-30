@@ -161,6 +161,13 @@ function App() {
     }
   }
 
+  function disconnectWallet() {
+    setAccount('')
+    setChainId('')
+    setTxHash('')
+    setStatus('Wallet disconnected locally. To revoke site access, disconnect it inside your wallet.')
+  }
+
   async function switchNetwork() {
     if (!window.ethereum) {
       setStatus('Install a MetaMask-compatible wallet first.')
@@ -242,9 +249,15 @@ function App() {
           <a href="#rail">Rail</a>
           <a href="#submit">Submit</a>
         </div>
-        <button className="iconButton" type="button" onClick={connectWallet} disabled={isBusy}>
+        <button
+          className="iconButton"
+          type="button"
+          onClick={account ? disconnectWallet : connectWallet}
+          disabled={isBusy}
+          title={account ? 'Disconnect wallet locally' : 'Connect wallet'}
+        >
           <Wallet size={18} />
-          {account ? shortAddress(account) : 'Connect'}
+          {account ? 'Disconnect' : 'Connect'}
         </button>
       </nav>
 
@@ -335,9 +348,13 @@ function App() {
             <input type="date" value={dueDate} onChange={(event) => setDueDate(event.target.value)} />
           </label>
           <div className="consoleButtons">
-            <button type="button" onClick={connectWallet} disabled={isBusy}>
+            <button
+              type="button"
+              onClick={account ? disconnectWallet : connectWallet}
+              disabled={isBusy}
+            >
               <Wallet size={17} />
-              {account ? 'Wallet connected' : 'Connect wallet'}
+              {account ? 'Disconnect wallet' : 'Connect wallet'}
             </button>
             <button type="button" onClick={switchNetwork} disabled={isBusy || !account}>
               <Network size={17} />
