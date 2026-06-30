@@ -448,6 +448,24 @@ function App() {
           Try the wallet console <ArrowRight size={18} />
         </a>
       </section>
+
+      <footer className="siteFooter">
+        <div>
+          <a className="footerBrand" href="#top" aria-label="TradeFlow Credit home">
+            <img className="brandMark" src="/tradeflow-logo.svg" alt="" />
+            TradeFlow Credit
+          </a>
+          <p>Proof-backed trade finance. No phantom rails.</p>
+        </div>
+        <div className="footerLinks" aria-label="Footer links">
+          <a href="https://github.com/0xNexuz/tradeflow-credit#readme" target="_blank">
+            Docs <ArrowRight size={14} />
+          </a>
+          <a href="https://github.com/0xNexuz/tradeflow-credit" target="_blank">
+            GitHub <ArrowRight size={14} />
+          </a>
+        </div>
+      </footer>
     </main>
   )
 }
